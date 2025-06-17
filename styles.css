@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #fff;
+    color: #111;
+    line-height: 1.6;
+  }
+  
+  header {
+    text-align: center;
+    padding: 3rem 1rem 1rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .subtitle {
+    color: #666;
+    font-size: 0.95rem;
+    margin-top: 0.25rem;
+  }
+  
+  nav {
+    margin-top: 1.5rem;
+  }
+  
+  nav a {
+    margin: 0 0.75rem;
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+  }
+  
+  main.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .grid-item {
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .grid-item img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  
+  .grid-item p {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .text-block {
+    max-width: 700px;
+    margin: 2rem auto; /* centers the content */
+    padding: 0 1rem;
+    line-height: 1.6;
+  }
+
+  .text-block h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .text-block h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  
+  .text-block ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .text-block li {
+    margin-bottom: 0.5rem;
+  }
+
+  .text-block a {
+    color: #0366d6;
+    text-decoration: none;
+  }
+  
+  .text-block a:hover {
+    text-decoration: underline;
+  }
