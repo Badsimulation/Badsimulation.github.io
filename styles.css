@@ -1,95 +1,121 @@
+/* ------------------------------
+   Base Styles
+------------------------------ */
 body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background: #fff;
-    color: #111;
-    line-height: 1.6;
-  }
-  
-  header {
-    text-align: center;
-    padding: 3rem 1rem 1rem;
-  }
-  
-  h1 {
-    font-size: 2rem;
-    font-weight: bold;
-    margin: 0;
-  }
-  
-  .subtitle {
-    color: #666;
-    font-size: 0.95rem;
-    margin-top: 0.25rem;
-  }
-  
-  nav {
-    margin-top: 1.5rem;
-  }
-  
-  nav a {
-    margin: 0 0.75rem;
-    text-decoration: none;
-    color: #444;
-    font-weight: 500;
-  }
-  
-  main.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    padding: 2rem;
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-  
-  .grid-item {
-    text-align: center;
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  .grid-item img {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  }
-  
-  .grid-item p {
-    margin-top: 0.5rem;
-    font-size: 1rem;
-    font-weight: 600;
-  }
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #fff;
+  color: #111;
+  line-height: 1.6;
+}
 
-  .text-block {
-    max-width: 700px;
-    margin: 2rem auto; /* centers the content */
-    padding: 0 1rem;
-    line-height: 1.6;
-  }
+/* ------------------------------
+   Header & Navigation
+------------------------------ */
+header {
+  text-align: center;
+  padding: 3rem 1rem 1rem;
+}
 
-  .text-block h2 {
-    font-size: 1.5rem;
-    margin-top: 2rem;
-  }
-  
-  .text-block ul {
-    padding-left: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .text-block li {
-    margin-bottom: 0.5rem;
-  }
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+}
 
-  .text-block a {
-    color: #0366d6;
-    text-decoration: none;
-  }
+.subtitle {
+  color: #666;
+  font-size: 0.95rem;
+  margin-top: 0.25rem;
+}
 
-  /* Certifications grid layout */
+nav {
+  margin-top: 1.5rem;
+}
+
+nav a {
+  margin: 0 0.75rem;
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+}
+
+/* ------------------------------
+   Main Layout: Project Grid (Homepage)
+------------------------------ */
+main.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.grid-item {
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.grid-item img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-item:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.grid-item p {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* ------------------------------
+   Project Pages / Text Content
+------------------------------ */
+.text-block {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  line-height: 1.6;
+}
+
+.text-block h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+}
+
+.text-block ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.text-block li {
+  margin-bottom: 0.5rem;
+}
+
+.text-block a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+/* General image behavior inside text blocks */
+.text-block img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* ------------------------------
+   Certifications Section (Experience Page)
+------------------------------ */
 .cert-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -119,14 +145,39 @@ body {
 }
 
 .cert-large {
-  width: 110px; /* Adjust until the badge is visually clear but not oversized */
+  width: 110px; /* Slightly larger badge option */
 }
 
-.grid-item img {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* ------------------------------
+   Wider Screenshot Container
+------------------------------ */
+.screenshot-container {
+  width: 100%;
+  padding: 2rem 5vw;
+  box-sizing: border-box;
 }
 
-.grid-item:hover img {
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.screenshot-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
 }
+
+.screenshot-row img {
+  width: 40%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 768px) {
+  .screenshot-row img {
+    width: 100%;
+  }
+}
+
+/* ------------------------------
+   Utilities & Transitions
+------------------------------ */
+/* (already included inside .grid-item img and .grid-item:hover img above) */
