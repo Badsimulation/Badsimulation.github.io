@@ -45,7 +45,8 @@ nav a {
 ------------------------------ */
 main.grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, 250px); /* Each item is 300px wide */
+  justify-content: center; /* Center grid items as they wrap */
   gap: 2rem;
   padding: 2rem;
   max-width: 1000px;
@@ -59,14 +60,13 @@ main.grid {
 }
 
 .grid-item img {
-  width: 100%;
+  width: 100%; /* 100% of the 300px cell */
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .grid-item:hover img {
   transform: scale(1.05);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -107,11 +107,25 @@ main.grid {
   text-decoration: none;
 }
 
+.section-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
 .section-header {
   font-size: 1.5rem;
   text-align: center;
   margin: 3rem 0 1rem;
   color: #222;
+}
+
+hr.section-divider {
+  border: none;
+  height: 1px;
+  background-color: #444;
+  width: 50%;
+  margin: 0 auto 2rem;
 }
 
 /* General image behavior inside text blocks */
@@ -219,13 +233,19 @@ main.grid {
 }
 
 .slideshow-buttons button {
-  background: rgba(0, 0, 0, 0.4);
-  color: white;
+  background: rgba(0, 0, 0, 0.6);      /* Darker background for more contrast */
+  color: #fff;                         /* Bright arrow color */
   border: none;
-  font-size: 1.5rem;
-  padding: 0.25rem 0.75rem;
-  border-radius: 4px;
+  font-size: 2rem;                     /* Larger arrow */
+  padding: 0.5rem 1rem;                /* Bigger clickable area */
+  border-radius: 6px;
   cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.slideshow-buttons button:hover {
+  background: rgba(0, 0, 0, 0.8);      /* Even darker on hover */
+  transform: scale(1.1);              /* Slight zoom on hover */
 }
 
 .slideshow-wrapper {

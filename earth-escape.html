@@ -20,8 +20,21 @@
   </header>
 
   <main class="text-block">
+    <section class="slideshow-wrapper">
+      <div class="slideshow-container">
+        <img class="slide active" src="assets/images/Earth_Escape_Screenshot_1.png" alt="Screenshot 1" />
+        <img class="slide" src="assets/images/Earth_Escape_Screenshot_2.png" alt="Screenshot 2" />
+        <img class="slide" src="assets/images/Earth_Escape_Screenshot_3.png" alt="Screenshot 3" />
+        <img class="slide" src="assets/images/Earth_Escape_Screenshot_4.png" alt="Screenshot 4" />
+        <img class="slide" src="assets/images/Earth_Escape_Screenshot_5.png" alt="Screenshot 5" />
+        <div class="slideshow-buttons">
+          <button onclick="prevSlide(this)">&#10094;</button>
+          <button onclick="nextSlide(this)">&#10095;</button>
+        </div>
+      </div>
+    </section>
+
     <section>
-      <img src="assets/images/Earth_Escape_Screenshot_1.png" alt="Earth Escape screenshot" style="max-width: 100%; border-radius: 8px; margin-bottom: 1rem;" />
       <p><strong>Earth Escape</strong> is a vertical-scrolling 2D platformer that places players in a thrilling journey through a post-apocalyptic Earth. Navigate ever upwards, dodge hazards, and prepare your elevator speech just in case you encounter the CEO.</p>
     </section>
 
@@ -48,5 +61,23 @@
       <p><a href="https://github.com/Badsimulation/earth-escape" target="_blank">View source on GitHub</a></p>
     </section>
   </main>
+
+  <script>
+    function nextSlide(button) {
+      const container = button.closest('.slideshow-container');
+      const slides = container.querySelectorAll('.slide');
+      let currentIndex = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
+      slides[currentIndex].classList.remove('active');
+      slides[(currentIndex + 1) % slides.length].classList.add('active');
+    }
+
+    function prevSlide(button) {
+      const container = button.closest('.slideshow-container');
+      const slides = container.querySelectorAll('.slide');
+      let currentIndex = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
+      slides[currentIndex].classList.remove('active');
+      slides[(currentIndex - 1 + slides.length) % slides.length].classList.add('active');
+    }
+  </script>
 </body>
 </html>

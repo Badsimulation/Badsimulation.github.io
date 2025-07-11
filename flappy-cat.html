@@ -20,8 +20,20 @@
   </header>
 
   <main class="text-block">
+    <section class="slideshow-wrapper">
+      <div class="slideshow-container">
+        <img class="slide active" src="assets/images/Flappy_Cat_Screenshot_1.png" alt="Screenshot 1" />
+        <img class="slide" src="assets/images/Flappy_Cat_Screenshot_2.png" alt="Screenshot 2" />
+        <img class="slide" src="assets/images/Flappy_Cat_Screenshot_3.png" alt="Screenshot 3" />
+        <img class="slide" src="assets/images/Flappy_Cat_Screenshot_4.png" alt="Screenshot 4" />
+        <div class="slideshow-buttons">
+          <button onclick="prevSlide(this)">&#10094;</button>
+          <button onclick="nextSlide(this)">&#10095;</button>
+        </div>
+      </div>
+    </section>
+
     <section>
-      <img src="assets/images/Flappy_Cat_Screenshot_1.png" alt="Flappy Cat Screenshot" style="max-width: 100%; border-radius: 8px; margin-bottom: 1rem;" />
       <p><strong>Flappy Cat</strong> is a lighthearted arcade-style game inspired by the original Flappy Bird. You control a pixel cat trying to flap through endless pipe obstacles, gaining points with each pass. A relaxing color palette and cat-themed visuals give it a fun, casual feel while retaining the challenge of timing-based gameplay.</p>
     </section>
 
@@ -50,5 +62,23 @@
       <p><a href="https://github.com/Badsimulation/flappy-cat" target="_blank">View source on GitHub</a></p>
     </section>
   </main>
+
+  <script>
+    function nextSlide(button) {
+      const container = button.closest('.slideshow-container');
+      const slides = container.querySelectorAll('.slide');
+      let currentIndex = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
+      slides[currentIndex].classList.remove('active');
+      slides[(currentIndex + 1) % slides.length].classList.add('active');
+    }
+
+    function prevSlide(button) {
+      const container = button.closest('.slideshow-container');
+      const slides = container.querySelectorAll('.slide');
+      let currentIndex = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
+      slides[currentIndex].classList.remove('active');
+      slides[(currentIndex - 1 + slides.length) % slides.length].classList.add('active');
+    }
+  </script>
 </body>
 </html>
