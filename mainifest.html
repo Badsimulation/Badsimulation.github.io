@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manifest – Project Page</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Manifest</h1>
+    <p class="subtitle">A surreal horror walking simulator set on a haunted shore</p>
+    <nav>
+      <a href="index.html">Projects</a>
+      <a href="experience.html">Experience</a>
+      <a href="certifications.html">Certifications</a>
+      <a href="bio.html">Bio</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Slideshow -->
+  <div class="slideshow-wrapper">
+  <div class="slideshow-container">
+    <img class="slide active" src="assets/images/Manifest_Screenshot_1.png" alt="Manifest Screenshot 1" />
+    <img class="slide" src="assets/images/Manifest_Screenshot_2.png" alt="Manifest Screenshot 2" />
+    <img class="slide" src="assets/images/Manifest_Screenshot_3.png" alt="Manifest Screenshot 3" />
+    <img class="slide" src="assets/images/Manifest_Screenshot_4.png" alt="Manifest Screenshot 4" />
+    <img class="slide" src="assets/images/Manifest_Screenshot_5.png" alt="Manifest Screenshot 5" />
+
+    <div class="slideshow-buttons">
+      <button onclick="plusSlide(-1)">‹</button>
+      <button onclick="plusSlide(1)">›</button>
+    </div>
+    </div>
+  </div>
+
+  <main class="text-block">
+    <section>
+      <p><strong>Manifest</strong> is a first-person psychological horror walking simulator set near a quiet port town and a looming lighthouse. Players explore distorted memories and surreal environments that hint at deeper emotional truths. Manifest focuses on subtle narrative, haunting ambiance, and minimalist mechanics to let the story unfold through player discovery.</p>
+    </section>
+
+    <section>
+      <h2>Key Features</h2>
+      <ul>
+        <li>Fixed-camera horror scenes with narrative transitions</li>
+        <li>Surreal mirror mechanics and environmental storytelling</li>
+        <li>NPC encounters reflecting the protagonist's regrets and denial</li>
+        <li>Foghorn mechanic that intensifies as you uncover the truth</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Development Skills Demonstrated</h2>
+      <ul>
+        <li><strong>Unity 3D Environment Design:</strong> Created moody indoor and outdoor spaces using URP lighting</li>
+        <li><strong>Player Systems:</strong> Dialogue interaction, camera switching, navigation limits</li>
+        <li><strong>Scripting:</strong> Mirror logic, foghorn trigger zones, and scene-based narrative pacing</li>
+        <li><strong>Horror Design:</strong> Tension-building using limited vision, sound cues, and visual symbolism</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Screenshots and Source</h2>
+      <p>(Playable demo not available yet)</p>
+    </section>
+  </main>
+
+  <!-- Slideshow Script -->
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll(".slide");
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === index);
+      });
+    }
+
+    function plusSlide(n) {
+      currentSlide = (currentSlide + n + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    showSlide(currentSlide);
+  </script>
+</body>
+</html>

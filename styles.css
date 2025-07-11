@@ -107,6 +107,13 @@ main.grid {
   text-decoration: none;
 }
 
+.section-header {
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 3rem 0 1rem;
+  color: #222;
+}
+
 /* General image behavior inside text blocks */
 .text-block img {
   max-width: 100%;
@@ -175,6 +182,56 @@ main.grid {
   .screenshot-row img {
     width: 100%;
   }
+}
+
+/* ------------------------------
+   Slideshow Container
+------------------------------ */
+
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  aspect-ratio: 16 / 9; /* Keeps a consistent size regardless of image height */
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  height: 100%; /* Match the container height */
+  object-fit: cover; /* Fills the space without stretching */
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.slide.active {
+  display: block;
+}
+
+.slideshow-buttons {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 0.5rem;
+}
+
+.slideshow-buttons button {
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.slideshow-wrapper {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 0 1rem;
 }
 
 /* ------------------------------
